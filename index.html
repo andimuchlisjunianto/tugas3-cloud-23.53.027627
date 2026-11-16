@@ -11,13 +11,18 @@
 
     <header>
         <nav class="navbar">
-            <h2 class="logo">ANDI<span>.</span></h2>
 
-            <ul>
+            <button class="menu-toggle" id="menuToggle"
+                    aria-label="Buka menu" aria-expanded="false">
+                ☰
+            </button>
+
+            <ul id="navMenu">
                 <li><a href="index.html" class="active">Beranda</a></li>
-                <li><a href="materi.html">Materi Komputasi Awan</a></li>
+                <li><a href="materi.html">Materi Cloud</a></li>
                 <li><a href="portofolio.html">Portofolio</a></li>
             </ul>
+
         </nav>
     </header>
 
@@ -37,22 +42,20 @@
                 menerapkan teknologi GitHub Pages.
             </p>
 
-            <a href="portofolio.html" class="btn">Lihat Portopilio </a>
+            <a href="portofolio.html" class="btn">Lihat Portofolio</a>
         </div>
 
         <div class="hero-image">
 
-            <img src="assets/images/andi.jpeg"alt="Foto Andi Muchlis Junianto">
+            <img src="assets/images/andi.jpeg"
+                 alt="Foto Andi Muchlis Junianto">
 
             <div class="profile-info">
                 <h3>Profil Mahasiswa</h3>
 
                 <p><strong>Nama:</strong> Andi Muchlis Junianto</p>
-
                 <p><strong>NIM:</strong> 23.53.027627</p>
-
                 <p><strong>Fakultas:</strong> Bisnis dan Informatika</p>
-
                 <p><strong>Universitas:</strong> Universitas Muhammadiyah Palangka Raya</p>
             </div>
 
@@ -63,6 +66,17 @@
     <footer>
         <p>© 2026 Andi Muchlis Junianto | Komputasi Awan</p>
     </footer>
+
+    <script>
+        const menuToggle = document.getElementById("menuToggle");
+        const navMenu = document.getElementById("navMenu");
+
+        menuToggle.addEventListener("click", function () {
+            navMenu.classList.toggle("show");
+            const isOpen = navMenu.classList.contains("show");
+            menuToggle.setAttribute("aria-expanded", isOpen);
+        });
+    </script>
 
 </body>
 </html>
