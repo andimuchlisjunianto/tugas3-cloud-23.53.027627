@@ -11,12 +11,18 @@
 
     <header>
         <nav class="navbar">
-            <h2 class="logo">MY PORTFOLIO.</h2>
-            <ul>
+
+            <button class="menu-toggle" id="menuToggle"
+                    aria-label="Buka menu" aria-expanded="false">
+                ☰
+            </button>
+
+            <ul id="navMenu">
                 <li><a href="index.html">Beranda</a></li>
-                <li><a href="materi.html" class="active">Materi Cloud</a></li>
+                <li><a href="materi.html" class="active">Materi Komputasi Awan</a></li>
                 <li><a href="portofolio.html">Portofolio</a></li>
             </ul>
+
         </nav>
     </header>
 
@@ -102,6 +108,17 @@
     <footer>
         <p>&copy; 2026 Website Mahasiswa | Tugas Komputasi Awan</p>
     </footer>
+
+    <script>
+        const menuToggle = document.getElementById("menuToggle");
+        const navMenu = document.getElementById("navMenu");
+
+        menuToggle.addEventListener("click", function () {
+            navMenu.classList.toggle("show");
+            const isOpen = navMenu.classList.contains("show");
+            menuToggle.setAttribute("aria-expanded", isOpen);
+        });
+    </script>
 
 </body>
 </html>
